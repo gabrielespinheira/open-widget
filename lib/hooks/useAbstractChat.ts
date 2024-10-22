@@ -606,6 +606,7 @@ function useAbstractChat({
     axiosInstance,
     handleKeyboard,
     hookState,
+    setHookState,
   };
 }
 
@@ -627,6 +628,7 @@ interface UseAbstractchatReturnType {
   noMessages: boolean;
   info: ReactNode;
   hookState: HookState | null;
+  setHookState: (hookState: HookState | null) => void;
   initialData: InitialData | null;
   settings: HookSettings | null;
   setSettings: (data: NonNullable<Partial<HookSettings>>) => void;
