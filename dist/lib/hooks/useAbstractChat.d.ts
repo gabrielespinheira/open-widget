@@ -72,7 +72,7 @@ interface UseAbstractchatReturnType {
     sendMessage: (input: SendMessageInput) => Promise<MessagePayload | null>;
     noMessages: boolean;
     info: ReactNode;
-    hookState: HookState;
+    hookState: HookState | null;
     initialData: InitialData | null;
     settings: HookSettings | null;
     setSettings: (data: NonNullable<Partial<HookSettings>>) => void;
