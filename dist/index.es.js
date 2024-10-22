@@ -1,7 +1,7 @@
 "use client";
-import { u as d, g as h, L as C, h as m } from "./ChatProvider-8l9QHwET.js";
-import { j as b, e as w, B as E, i as F, k as H, C as j, F as A, M as X, l as Y, n as $, m as q, o as O, q as R, d as U, f as z, p as G, w as J } from "./ChatProvider-8l9QHwET.js";
 import { jsx as g } from "react/jsx-runtime";
+import { u as d, g as h, L as C, h as m } from "./ChatProvider-DGEzX15t.js";
+import { j as b, e as w, B as E, i as F, k as H, C as j, F as A, M as X, l as Y, n as $, m as q, o as O, q as R, d as U, f as z, p as G, w as J } from "./ChatProvider-DGEzX15t.js";
 import { useRef as f, useEffect as x, useState as S, useCallback as y } from "react";
 function T() {
   const t = f(!0);

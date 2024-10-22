@@ -223,6 +223,11 @@ function useAbstractChat({
     settings?.persistSession ? "local" : "memory",
   );
 
+  const [hookState, setHookState] = useSyncedState<HookState>(
+    'hookState',
+    'idle',
+  );
+
   async function refreshSession(sessionId: string) {
     let response = await getChatSessionById(axiosInstance, sessionId);
     if (response.data) {
@@ -281,7 +286,7 @@ function useAbstractChat({
 
   useEffect(() => {
     debug('✨ Welcome to Open Widget');
-    
+
     if (session) {
 
       socket?.on("heartbeat:ack", (data: { success: boolean }) => {
@@ -498,6 +503,7 @@ function useAbstractChat({
         if (newSession) {
           setSession(newSession);
           joinSession(newSession.id);
+          setHookState('loading');
           chatSession = newSession;
         } else {
           throw new Error("Failed to create session");
@@ -554,6 +560,7 @@ function useAbstractChat({
             payload: null
           });
         }
+        setHookState('loading');
 
         socket.emit("send_chat", payload);
         return payload;
